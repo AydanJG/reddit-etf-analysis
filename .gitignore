@@ -1,0 +1,18 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# Editor config
+.vscode/
+.idea/
+.DS_Store
+
+# Runtime data
+tmp/
+static/results/
+
+# System files
+Thumbs.db

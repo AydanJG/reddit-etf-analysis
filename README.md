@@ -36,4 +36,5 @@ nltk.download('wordnet')
 
 **Run Program:**
 python app.py
-   
+
+Connect to local server provided in terminal to view results, "Running on http://...."
