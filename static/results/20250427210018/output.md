@@ -1,0 +1,23 @@
+# Traffic Spike Analysis for “Michael Ngo, Goonicide”
+
+**Generated:** 2025-04-27 21:00:18
+
+| Parameter        | Value      |
+|:-----------------|-----------:|
+| year | 2025 |
+| month | 4 |
+| latest_rate | 0.0444 |
+| beta | 1.0 |
+| mean | 0.044175 |
+| stdev | 0.020124007003942748 |
+| variance | 0.000384726875 |
+| median | 0.0516 |
+| min | 0.0129 |
+| max | 0.0857 |
+| threshold | 0.06429900700394275 |
+| recommendation | no_action |
+| relevant_etfs | EWA,EWJ,BLV,VHT,DXJ,VGLT,VCLT,IRY,IYH,EPP |
+
+## Spike Plot
+
+![Spike Plot](/static/spike_plot.png)
