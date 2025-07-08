@@ -13,24 +13,11 @@ OUTPUT_CSV = 'tmp/traffic_avg_per_day.csv'
 
 
 def load_keywords(path: str):
-    """Load keywords and compile into regex patterns (robust version)"""
-    with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-        kws = []
-        for line in f:
-            clean_line = (
-                line
-                .strip()
-                .replace("“", '"')
-                .replace("”", '"')
-                .replace("’", "'")
-                .replace("–", "-")
-                .replace("—", "-")
-            )
-            if clean_line:
-                kws.append(clean_line)
+    """Load keywords and compile into regex patterns"""
+    with open(path, 'r', encoding='utf-8') as f:
+        kws = [line.strip() for line in f if line.strip()]
     return [re.compile(r"\b" + re.escape(kw) + r"\b", flags=re.IGNORECASE)
             for kw in kws]
-
 
 
 def compute_weighted_counts_and_days(data_csv: str, patterns: list):
