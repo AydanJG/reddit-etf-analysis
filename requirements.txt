@@ -6,3 +6,5 @@ requests
 scikit-learn
 sentence-transformers
 wikipedia
+flask
+markdown

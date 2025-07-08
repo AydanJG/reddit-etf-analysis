@@ -29,7 +29,8 @@ def index():
 def show_result(folder):
     md_path = f"{app.static_folder}/results/{folder}/output.md"
     try:
-        raw = open(md_path).read()
+        with open(md_path, "r", encoding="utf-8") as f:
+            raw = f.read()
         html = md_lib.markdown(raw, extensions=["fenced_code", "tables"])
     except FileNotFoundError:
         flash("❌ Result not found.")

@@ -83,6 +83,23 @@ def save_keywords(
     filepath: str = "tmp/keywords.txt"
 ) -> None:
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    with open(filepath, "w") as f:
-        f.write("\n".join(keywords))
+
+    cleaned = []
+    for kw in keywords:
+        safe = (
+            kw.strip()
+            .replace("“", '"')
+            .replace("”", '"')
+            .replace("’", "'")
+            .replace("–", "-")
+            .replace("—", "-")
+        )
+        # Remove any remaining non-ASCII characters
+        safe = safe.encode("ascii", errors="ignore").decode("ascii")
+        if safe:
+            cleaned.append(safe)
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write("\n".join(cleaned))
+
 
